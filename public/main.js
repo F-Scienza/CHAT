@@ -12,14 +12,13 @@ socket.on('messages', data=>{
 //  inyectar los mensajes al html
 function render(data){
     const html = data.map((elem, index) => {
-        return(
-            `<div>
+        return(`<div>
                 <strong>  ${elem.author}  </strong>
                 <em>  ${elem.text}  </em>
             </div>`
         )
     }).join(" ")//  conecta los elementos de array con un espacio
-    document.getElementById(('messages'.innerHTML = html));
+    document.getElementById('messages').innerHTML = html;
     //  lo insertamos en el dom
 }
 socket.on('messages', function(data){ render(data) })

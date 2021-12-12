@@ -10,6 +10,7 @@ const io = new IOServer(httpServer)
 httpServer.listen(process.env.PORT || 3000, function () {
 	console.log('Server running...');
 });
+
 //  para probar creamos un array de mensajes que vamos a 
 //  enviar cuando se conecte un cliente web
 const messages = [
