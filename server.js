@@ -18,9 +18,9 @@ const messages = [
     { author: "Sam", text: "guau guau "  }
 ];
 
-//  servidor escuchando puerto 8080 de localhost
-httpServer.listen(process.env.PORT || 3000, function () {
-	console.log('Server running...');
+//  servidor escuchando puerto 3000 de localhost
+httpServer.listen(3000, function () {
+	console.log('Server running...' );
 });
 
 //  el servidor de websocket espera la conexion
