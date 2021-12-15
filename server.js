@@ -13,9 +13,6 @@ app.use(express.static('./public'))
 //  enviar cuando se conecte un cliente web
 const messages = [
     { author: "Cufa", text: "Hola we!" },
-    { author: "Sofi", text: "Hola!! !"  },
-    { author: "Pachi", text: "Que onda"  },
-    { author: "Sam", text: "guau guau "  }
 ];
 
 //  servidor escuchando puerto 3000 de localhost
@@ -29,4 +26,12 @@ httpServer.listen(3000, function () {
 io.on('connection', function(socket){
     console.log('un cliente se ha conectado')
     socket.emit('messages', messages);
+
+    // escuchamos el evento new-message, recibimos data
+    // y lo agregamos al array messages
+    socket.on('new-message', data => {
+			messages.push(data);
+			io.sockets.emit('messages', messages);
+		});
+
 })

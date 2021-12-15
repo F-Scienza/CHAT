@@ -10,6 +10,11 @@
 </head>
 <body>
     <h1>App chat</h1>
+    <form onsubmit="return addMessage(this)">
+        <input type="text" id="username" placeholder="user" >
+        <input type="text" id="texto" placeholder="Escribe un mensaje">
+        <input type="submit" value="send">
+    </form>
     <div id="messages">
         
     </div>
